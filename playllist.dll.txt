@@ -1,0 +1,8 @@
+CREATE TABLE `playlist` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `perfil_dono_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKvlsf6og61ej1xx8ch4jufvf7` (`perfil_dono_id`),
+  CONSTRAINT `FKvlsf6og61ej1xx8ch4jufvf7` FOREIGN KEY (`perfil_dono_id`) REFERENCES `perfil` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

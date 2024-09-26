@@ -1,0 +1,14 @@
+CREATE TABLE `perfil` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `nomemusuario` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  `conta_id` bigint(20) DEFAULT NULL,
+  `plano_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK47su600vwj56q21xtsc9keic2` (`nomemusuario`),
+  KEY `FKmlakvnrgl8p48un68tsjk5d85` (`conta_id`),
+  KEY `FK6sge24vgclpgpkjt3hwb1fgws` (`plano_id`),
+  CONSTRAINT `FK6sge24vgclpgpkjt3hwb1fgws` FOREIGN KEY (`plano_id`) REFERENCES `plano` (`id`),
+  CONSTRAINT `FKmlakvnrgl8p48un68tsjk5d85` FOREIGN KEY (`conta_id`) REFERENCES `conta` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

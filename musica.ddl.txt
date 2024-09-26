@@ -1,0 +1,12 @@
+CREATE TABLE `musica` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `duracao` int(11) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `album_id` bigint(20) DEFAULT NULL,
+  `artista_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKqc7nayr65xaoxxcxw5nliassj` (`album_id`),
+  KEY `FKitfydyjqd7t94nuy82xi3hfi0` (`artista_id`),
+  CONSTRAINT `FKitfydyjqd7t94nuy82xi3hfi0` FOREIGN KEY (`artista_id`) REFERENCES `artista` (`id`),
+  CONSTRAINT `FKqc7nayr65xaoxxcxw5nliassj` FOREIGN KEY (`album_id`) REFERENCES `album` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

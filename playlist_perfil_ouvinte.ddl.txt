@@ -1,0 +1,8 @@
+CREATE TABLE `playlist_perfil_ouvinte` (
+  `playlist_id` bigint(20) NOT NULL,
+  `perfil_ouvinte_id` bigint(20) NOT NULL,
+  KEY `FKa8g39ifrsorbufgwbw1ojvqg` (`perfil_ouvinte_id`),
+  KEY `FK8kxc0l0ta32s9x78s599na6up` (`playlist_id`),
+  CONSTRAINT `FK8kxc0l0ta32s9x78s599na6up` FOREIGN KEY (`playlist_id`) REFERENCES `playlist` (`id`),
+  CONSTRAINT `FKa8g39ifrsorbufgwbw1ojvqg` FOREIGN KEY (`perfil_ouvinte_id`) REFERENCES `perfil` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
